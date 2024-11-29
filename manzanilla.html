@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediPlant</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .left-panel {
+            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Kamomillasaunio_%28Matricaria_recutita%29.JPG/640px-Kamomillasaunio_%28Matricaria_recutita%29.JPG");
+            background-size: cover;
+            flex: 0.3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .right-panel {
+            background-color: white;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeInRight 2s ease forwards;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            animation: fadeInScale 2s ease forwards;
+        }
+
+        h5 {
+            text-align: left;
+            color: white;
+            animation: fadeInLeft 2s ease-in-out;
+        }
+
+        h2, p, ul {
+            opacity: 0;
+            animation: fadeIn 3s ease forwards;
+            animation-delay: 1s;
+        }
+
+        ul li {
+            animation: fadeInItem 3s ease forwards;
+            animation-delay: 2s;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.2s ease;
+            animation: fadeIn 3s ease forwards;
+            animation-delay: 2s;
+        }
+
+        button:hover {
+            animation: bounce 0.5s;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInItem {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            ul, p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <h5></h5>
+    </div>
+
+    <div class="right-panel">
+        <h1>Manzanilla</h1>
+        <div id="label-container" class="mt-3">
+            <h2>Beneficios Medicinales de la Manzanilla</h2>
+            <p id="texto-lectura">La manzanilla es una de las plantas medicinales más conocidas y utilizadas en todo el mundo por sus propiedades calmantes y terapéuticas:</p>
+            <ul id="texto-lectura">
+                <li><strong>Relajante natural:</strong> Las infusiones de manzanilla son conocidas por reducir el estrés, la ansiedad y promover la relajación general del cuerpo y la mente.</li>
+                <li><strong>Alivio de problemas digestivos:</strong> La manzanilla ayuda a calmar el malestar estomacal, los gases, la indigestión y los espasmos intestinales.</li>
+                <li><strong>Mejora del sueño:</strong> Gracias a sus propiedades relajantes, tomar una infusión de manzanilla antes de dormir puede ayudar a conciliar el sueño y combatir el insomnio.</li>
+                <li><strong>Propiedades antiinflamatorias:</strong> La manzanilla puede reducir la inflamación y aliviar dolores musculares, articulares y otras molestias inflamatorias.</li>
+                <li><strong>Alivio del dolor menstrual:</strong> Tomar infusión de manzanilla puede ayudar a reducir los calambres y molestias asociados con el ciclo menstrual.</li>
+                <li><strong>Mejora de la salud de la piel:</strong> Aplicada tópicamente, la manzanilla puede ayudar a calmar irritaciones de la piel, quemaduras leves y mejorar la cicatrización de heridas.</li>
+                <li><strong>Propiedades antimicrobianas:</strong> Se ha demostrado que la manzanilla tiene efectos antimicrobianos y ayuda a combatir infecciones leves.</li>
+                <li><strong>Alivio de dolores de cabeza:</strong> La manzanilla se utiliza para reducir las molestias de dolores de cabeza leves y migrañas.</li>
+                <li><strong>Soporte para el sistema inmunológico:</strong> Los antioxidantes en la manzanilla pueden fortalecer el sistema inmune y ayudar a prevenir infecciones.</li>
+            </ul>
+            <p>Gracias a sus múltiples propiedades, la manzanilla es una planta medicinal versátil que puede ser utilizada en infusiones, aplicaciones tópicas y más para mejorar la salud y el bienestar.</p>
+    
+            <!-- Botón para lectura en voz alta -->
+            <button onclick="leerTexto()">Escuchar lectura en voz alta</button>
+            <!-- Botón para detener la lectura -->
+            <button onclick="detenerLectura()">Detener lectura</button>
+        </div>
+    </div>
+    
+    
+
+    <!-- JavaScript para lectura en voz alta -->
+    <script>
+        function leerTexto() {
+            const texto = document.getElementById('label-container').innerText;
+            const speech = new SpeechSynthesisUtterance(texto);
+            speech.lang = "es-ES";  // Establece el idioma en español
+            window.speechSynthesis.speak(speech);
+        }
+
+        function detenerLectura() {
+            window.speechSynthesis.cancel();  // Detiene la lectura en curso
+        }
+    </script>
+
+</body>
+</html>
