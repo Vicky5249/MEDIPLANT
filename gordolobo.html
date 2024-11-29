@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediPlant</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .left-panel {
+            background-image: url("https://i.etsystatic.com/10457806/r/il/75f97f/2834470410/il_570xN.2834470410_5fpu.jpg");
+            background-size: cover;
+            flex: 0.3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .right-panel {
+            background-color: white;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeInRight 2s ease forwards;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: rgb(0, 0, 0);
+            animation: fadeInScale 2s ease forwards;
+        }
+
+        h5 {
+            text-align: left;
+            color: white;
+            animation: fadeInLeft 2s ease-in-out;
+        }
+
+        h2, p, ul {
+            opacity: 0;
+            animation: fadeIn 3s ease forwards;
+            animation-delay: 1s;
+        }
+
+        ul li {
+            animation: fadeInItem 3s ease forwards;
+            animation-delay: 2s;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.2s ease;
+            animation: fadeIn 3s ease forwards;
+            animation-delay: 2s;
+        }
+
+        button:hover {
+            animation: bounce 0.5s;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInItem {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            ul, p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="left-panel">
+        <h5></h5>
+    </div>
+        <div class="right-panel">
+            <h1>Gordolobo</h1>
+            <div id="label-container" class="mt-3">
+                <h2>Beneficios Medicinales del Gordolobo</h2>
+                <p id="texto-lectura">El gordolobo, también conocido como verbasco, es una planta medicinal popular utilizada en remedios naturales por sus múltiples beneficios:</p>
+                <ul id="texto-lectura">
+                    <li><strong>Alivio de problemas respiratorios:</strong> El gordolobo se usa en infusiones para aliviar afecciones como la bronquitis, el asma y la tos persistente.</li>
+                    <li><strong>Propiedades expectorantes:</strong> Esta planta ayuda a despejar las vías respiratorias, facilitando la expulsión de mucosidades.</li>
+                    <li><strong>Propiedades antiinflamatorias:</strong> Sus extractos pueden reducir la inflamación, siendo útil para el dolor de garganta y otros malestares.</li>
+                    <li><strong>Alivio de dolores musculares:</strong> Aplicado de forma tópica, el gordolobo puede aliviar dolores musculares y articulares.</li>
+                    <li><strong>Tratamiento de infecciones leves:</strong> Los extractos de gordolobo tienen propiedades antimicrobianas que pueden ayudar a combatir infecciones menores.</li>
+                    <li><strong>Calmante para el sistema digestivo:</strong> El té de gordolobo es útil para problemas digestivos como la indigestión y los espasmos estomacales.</li>
+                    <li><strong>Efecto calmante:</strong> Puede ayudar a reducir la ansiedad y el insomnio gracias a sus propiedades calmantes naturales.</li>
+                    <li><strong>Cuidado de la piel:</strong> Aplicado en cataplasmas, el gordolobo puede calmar irritaciones en la piel y promover la cicatrización de heridas.</li>
+                    <li><strong>Propiedades analgésicas:</strong> Se utiliza para aliviar dolores menores de cabeza y otros dolores leves.</li>
+                </ul>
+                <p>Gracias a sus propiedades, el gordolobo es valorado en la medicina natural como un remedio versátil y efectivo.</p>
+    
+                <!-- Botón para lectura en voz alta -->
+                <button onclick="leerTexto()">Escuchar lectura en voz alta</button>
+                <!-- Botón para detener la lectura -->
+                <button onclick="detenerLectura()">Detener lectura</button>
+            </div>
+    
+    </div>
+
+    <!-- JavaScript para lectura en voz alta -->
+    <script>
+        function leerTexto() {
+            const texto = document.getElementById('label-container').innerText;
+            const speech = new SpeechSynthesisUtterance(texto);
+            speech.lang = "es-ES";  // Establece el idioma en español
+            window.speechSynthesis.speak(speech);
+        }
+
+        function detenerLectura() {
+            window.speechSynthesis.cancel();  // Detiene la lectura en curso
+        }
+    </script>
+
+</body>
+</html>
